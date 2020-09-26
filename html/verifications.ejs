@@ -1,0 +1,179 @@
+<%- include('ek/header', {bot, user, path}) %>
+<% if (user.id !== kisi.id) { %>
+
+<br>
+<div class="container">
+	
+		<div align="center">
+    <br><br><img src="https://www.platinmarket.com/wp-content/uploads/2018/03/404.png" style="width: 420px"><br><br>
+      <h3 style="color: black">Hata! Sayfa Bulunamadı!</h3>
+      <br><br>
+    </div>
+
+</div></div></div>
+
+<% } else { %>
+    <style>
+    .profilepic {
+    z-index: 10000;
+    display: block;
+    margin: auto;
+    
+    width: 150px;
+    border-radius: 50%;
+}
+      .badgecase {
+    border-radius: 4px;
+    color: black;
+    text-align: center;
+    display: block;
+    margin: auto;
+    width: 80px;
+    word-wrap: break-word;
+    margin-top: 10px;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+.badgecase img {
+    width: 50px;
+  float: left;
+    height: 50px;
+    border-radius: 5px;
+}
+      #bgslide {
+  box-shadow: inset 2px 80px 200px 0px #404040;
+  -webkit-box-shadow: inset 2px 80px 200px 0px #404040;
+  -moz-box-shadow: inset 2px 80px 200px 0px #404040;
+  -o-box-shadow: inset 2px 80px 200px 0px #404040;
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding: 1rem 1.5rem; 
+  outline: solid 2px #7289da;
+}
+      .profilebadges {
+  width: 35px;
+  height: 35px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.65));
+  }
+
+@keyframes bgmove {
+  from {background-position: bottom center;}
+  to {background-position: top center;}
+}
+
+#bgslide {
+  animation: bgmove 30s linear infinite;
+  animation-direction: alternate;
+  }
+
+@media screen and (min-width: 500px), print {
+  #bgslide {
+    padding-bottom: 5rem;
+    padding-top: 8rem; } }
+
+@media screen and (max-width: 500px), print {
+  #bgslide {
+    padding-bottom: 1rem;
+    padding-top: 6rem; 
+    background-size: auto !important; } }
+    </style>
+<div class="top">
+  <br>
+  <center>
+<br><br><br>  <h2 style="color: black" class="sertifika-yazi">
+   Sertifika için bir bot seçin.
+  </h2>
+  </center><br>
+<div class="container is-fluid">
+<div class="card-list" id="featuredverifiedbots" style="margin-bottom: 85px;">
+  <% if (bot.ayar.has('botlar')) { %>
+    <% if (bot.ayar.has(`kbotlar.${kisi.id}`)) { %>   
+
+<%for(var i = 0; i < Object.keys(bot.ayar.fetch('botlar')).length; i++) {%>
+<% var idd = Object.keys(bot.ayar.fetch('botlar'))[i] %>
+<%  if (bot.ayar.fetch(`botlar.${idd}.sahipid`) === kisi.id) { %>
+<div class="card">
+    <div class="content">
+        
+        <div class="avatar">
+        
+            
+            <img class="pic" src="<%=bot.ayar.fetch(`botlar.${idd}.avatar`)%>" onerror="this.onerror=null;this.src='https://topbots-site-kodlari.glitch.me/img/error/3.png'">
+            
+            <!---
+            <div class="badges">
+                
+                <img style="width: 35px; height: 35px;" class="undraggable" src="/img/featured.png" title="Featured Bot">
+                
+                
+                
+                
+                <a href="/verification"><img style="width: 35px; height: 35px;" class="undraggable" src="/img/verification/verifiedbot.png" title="Verified Bot"></a>
+                
+            </div>
+ --->
+        </div>
+        
+        <div class="name"><%=bot.ayar.fetch(`botlar.${idd}.isim`)%></div>
+        
+        <%if (bot.users.get(idd)){%>
+						<% if (bot.users.get(idd).presence.status === 'online') {%>
+			<div class="counts" id="status-idle" >Bot Aktif</div>
+						<%} else if(bot.users.get(idd).presence.status === 'offline'){%>
+			<div class="counts" id="status-dnd" >Bot Kapalı</div>
+						<%}else if (bot.users.get(idd).presence.status === 'dnd'){%>
+				<div class="counts" id="status-idle">Bot Aktif</div>
+						<%}else if(bot.users.get(idd).presence.status === 'idle'){%>
+						<div class="counts" id="status-idle">Bot Aktif</div>
+						<%} %>  
+        <% } else { %>
+						<div class="counts">Bot Kapalı</div>
+            
+        <% } %>
+             
+        
+        
+        
+        
+            
+            <a href="/bot//vote"><div class="counts"><%= bot.ayar.fetch(`botlar.${idd}.oy`) || 0 %> OY</div></a>
+            
+        
+        
+        <div class="short-desc"><%=bot.ayar.fetch(`botlar.${idd}.kisaaciklama`)%></div>
+    </div>
+    
+    <div class="options">
+        
+            
+            <a href="/sertifika/onayla/<%=idd%>">Seç</a>
+            
+       
+    </div>
+    
+</div>          
+             
+            
+            <br>
+          </div>
+             
+   <% } %>
+    <% } %>
+   <% } %>
+   <% } else {%>
+             <br>
+   <center><h5 class="sertifika-yazi">
+     No bots available to list.
+     </h5></center>
+</div>
+   <% } %>
+
+</div>
+<% } %>
+      <% include ek/footer %>

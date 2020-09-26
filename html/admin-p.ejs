@@ -1,0 +1,54 @@
+<%- include('ek/admin-header', {bot, user, path}) %>
+    <main><div class="container">
+  <div class="row equal-height-grid">
+
+    <div class="col l9 s12">
+
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title"></span>
+          <p><%=bot.user.username%> Aktif !</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="card-content">
+          <div class="chat-wrapper">
+
+            <div class="chat-message">
+              <img class="circle" src="https://cdn.discordapp.com/avatars/<%=bot.user.id%>/<%=bot.user.avatar%>.png" alt="avatar">
+              Merhaba <%=user.username%> admin panele hos geldin gercek bir yetkili oldugunu dogruladin gerekli islemleri yan menuden yapabilirsiniz.
+            </div>
+        </div>
+        </div>
+
+    </div>
+
+   
+
+    </main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
+
+<!-- External libraries -->
+
+<!-- jqvmap -->
+<script type="text/javascript" src="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/jquery.vmap.min.js?0"></script>
+<script type="text/javascript" src="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/jquery.vmap.world.js?0" charset="utf-8"></script>
+<script type="text/javascript" src="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/jquery.vmap.sampledata.js?0"></script>
+
+<!-- ChartJS -->
+<script type="text/javascript" src="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/Chart.js?0"></script>
+<script type="text/javascript" src="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/Chart.Financial.js?0"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.7.0/fullcalendar.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+<script src="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/imagesloaded.pkgd.min.js?0"></script>
+<script src="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/masonry.pkgd.min.js?0"></script>
+
+
+<!-- Initialization script -->
+<script src="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/dashboard.min.js?0"></script>
+  </body>
+</html>

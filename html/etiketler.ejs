@@ -1,0 +1,106 @@
+<%- include('ek/header', {bot, user, path}) %>
+
+
+          <div class="post-actions">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+           <center><p style="font-size:30px;color:blue;">Etiketler</p></center>
+                  <div class="post-tags">
+                    <div align="center">
+                      <span><a href="etiketler/moderasyon" class="atag" style="margin:8px">Moderasyon</a></span>
+                      <span><a href="etiketler/muzik" class="atag" style="margin:8px">Müzik</a></span>
+                      <span><a href="etiketler/ayarlar" class="atag" style="margin:8px">Ayarlar</a></span>
+                      <span><a href="etiketler/eglence" class="atag" style="margin:8px">Eğlence</a></span>
+                      <span><a href="etiketler/web-panel" class="atag" style="margin:8px">Web Panel</a></span>
+                      <span><a href="etiketler/ekonomi" class="atag" style="margin:8px">Ekonomi</a></span>
+                      <span><a href="etiketler/oyun" class="atag" style="margin:8px">Oyun</a></span>
+                      <span><a href="etiketler/roleplay" class="atag" style="margin:8px">Roleplay</a></span>
+                      <span><a href="etiketler/seviye" class="atag" style="margin:8px">Seviye</a></span>
+                      <span><a href="etiketler/anime" class="atag" style="margin:8px">Anime</a></span>
+                      <span><a href="etiketler/ayarlanabilir" class="atag" style="margin:8px">Ayarlanabilir</a></span>
+
+                    </div>
+                   </div>
+              </div>
+
+<style>
+ .tagstext {
+    text-align: center;
+    margin: auto;
+    margin-top: 25px;
+    /*margin-left: -235px;*/
+    font-weight: bold;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    opacity: 0.9;
+	  text-transform: uppercase;
+  }
+ .tagsbox {
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border: 2px dashed white;
+    border-radius: 4px;
+    max-width: 35%;
+    width: auto;
+    height: auto;
+    margin: auto;
+    padding: 8px;
+  }
+ .tagbutton {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    display: inline-block;
+    width: auto;
+    background: white;
+    /*color: rgba(0,0,0,0.64);*/
+    color: rgba(238,234,234,0.85);
+    padding: 5px;
+    opacity: 0.75;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: border-bottom 0.2s ease-in-out;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+  }
+  .tagbutton#music {
+    background: rgb(101,184,251);
+  }
+  .tagbutton#fun {
+    background: rgb(185,185,43);
+  }
+  .tagbutton#economy {
+    background: rgb(5,181,5);
+  }
+  .tagbutton#nsfw {
+    background: #cb1919d1;
+  }
+  .tagbutton#utility {
+    background: rgb(179,12,179);
+  }
+  .tagbutton:hover {
+    opacity: 1;
+    color: white;
+    filter: drop-shadow(0px 0px 4px rgba(255, 255, 255));
+  }
+  span.icon {
+    height: 0;
+  }
+  @media all and (max-width: 1471px) {
+    .tagbutton {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .tagsbox {
+        max-width: 50%;
+    }
+  }
+</style>
+<% include ek/etiketler-footer %>

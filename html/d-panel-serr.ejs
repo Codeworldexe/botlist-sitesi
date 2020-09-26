@@ -1,0 +1,68 @@
+<%- include('ek/admin-header', {bot, user, path}) %>
+              
+              
+              
+              
+    <main>
+    <div class="container">
+  <div id="test1" class="row">
+    <div class="col s12 m6">
+
+      <div class="card horizontal">
+      
+    </div>
+  </div>
+  <div id="test2" class="row">
+    <div class="col s12">
+      <div class="card">
+		<table class="table" style="background-color:#fff">
+		<tr>
+		<th>İşlem</th>
+		<th>Bot Adı</th>
+		<th>Bot ID</th>
+		<th style="width:10%;">Bot Prefix</th>
+		</tr>	
+      
+		<%for(var i = 0; i < Object.keys(bot.ayar.fetch('botlar')).length; i++) {%>
+		<% let id = Object.keys(bot.ayar.fetch('botlar'))[i] %>
+		<% if (bot.ayar.fetch(`botlar.${id}.sertifika`) === 'Bulunuyor') { %>
+	  <tr>
+		<td><a class="btn btn-warning" href="/botyonetici/sertifikasil/<%=id%>">Sertifika Sil<i aria-hidden="true"></i></a>
+		<a class="btn btn-primary" href="https://discordapp.com/oauth2/authorize?client_id=<%=id%>&scope=bot&permissions=0">Davet Et (Perm: 0)</a>
+		<a class="btn btn-primary" href="https://discordapp.com/oauth2/authorize?client_id=<%=id%>&scope=bot&permissions=8">Davet Et (Perm: 8)</a></td>
+		<td><%=bot.ayar.fetch(`botlar.${id}.isim`)%></td>
+		<td><%=bot.ayar.fetch(`botlar.${id}.id`)%></td>
+		<td><%=bot.ayar.fetch(`botlar.${id}.prefix`)%></td>
+		</tr>
+		<% } %>
+		<%}%>
+		</table>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
+
+<!-- External libraries -->
+
+<!-- jqvmap -->
+<script type="text/javascript" src="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/jquery.vmap.min.js?0"></script>
+<script type="text/javascript" src="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/jquery.vmap.world.js?0" charset="utf-8"></script>
+<script type="text/javascript" src="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/jquery.vmap.sampledata.js?0"></script>
+
+<!-- ChartJS -->
+<script type="text/javascript" src="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/Chart.js?0"></script>
+<script type="text/javascript" src="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/Chart.Financial.js?0"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.7.0/fullcalendar.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+<script src="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/imagesloaded.pkgd.min.js?0"></script>
+<script src="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/masonry.pkgd.min.js?0"></script>
+
+
+<!-- Initialization script -->
+<script src="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/dashboard.min.js?0"></script>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<%- include('ek/header', {bot, user, path}) %>
+<div class="container">
+<style> h3 { color:#fff; } p { color:lightgrey; } </style>
+	<div class="jumbotron">
+		<div align="center">
+     <img src='https://i.hizliresim.com/Y4XhRm.png' width="90" height="90" border='0' alt='xir-sertifika100'/>
+		   <h3 style="color:#7289DA">Sertifika Nasıl Alınır?</h3>
+		   <p style="color:lightgrey;font-size:15px;">Sertifika botunuzun ve sizin özel olarak Discord sunucumuzda ve sitemizde rol almasını sağlamaktadır. Sertifikalı botlar anasayfada gözükmektedir ve özel olarak botunuza <b>Sertifika</b> simgesi verilir.
+      <br><h5 style="color:#7289DA">Sertifika Avantajları</h5>
+		 <p style="color:lightgrey;font-size:15px;">- Discord Sunucumuzda  botunuz Sertifikalı Bot rolü. </p>
+		 <p style="color:lightgrey;font-size:15px;">- Sitemizde botunuzun profilinde Sertifikalı yazar ve botunuzun profilinde Sertifika ikonu yer alır. </p>
+      <br><h5 style="color:#7289DA">Sertifika Şartları ve Başvuru</h5>
+		 <p style="color:lightgrey;font-size:15px;">
+     - Botunuzun <b>50</b> veya 50'den fazla sunucuda bulunması gerekmektedir.
+		</p>
+     <p style="color:lightgrey;font-size:15px;">
+      - Botunuzdaki tüm sistemler ayarlamalı olmalıdır.
+		</p>
+ <p style="color:lightgrey;font-size:15px;">
+- Botunuzun herhangi bir menüsü başka bir bota yönlendirmemelidir.		</p>
+	<% if (user) { %>
+    <center>
+      <h2 style='color: #b442b8' class="subtitle">
+Sertifika almak için gerekenlere sahip misiniz?
+      </h2>
+  
+   <form method="post">
+       <% if (user.id) { %>
+     <a class="hareket yukari" href="/verifications/<%=user.id%>">Sertifika Başvuru</a>
+       <% } %>
+     	</form>
+  
+  </center>
+   
+      <% } else { %>
+  <center>
+      <h2 style='color: #b442b8' class="subtitle">
+Sertifika almak için gerekenlere sahip misiniz? Giriş yapın ve buradan başvuru atın
+      </h2>
+  
+   <form method="post">
+     <a class="hareket yukari" href="/giris">Giriş Yapın</a>
+     	</form>
+  
+  </center>
+   
+
+      <% } %>	
+
+   
+<style>
+ @import 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&subset=latin-ext';
+a.hareket{
+  display:table;
+  background-color:transparent;
+  background-image: linear-gradient(to bottom,transparent 50%, white 50%);
+  background-size: 100% 200%;
+  font:300 18px 'Roboto', sans-serif;
+  letter-spacing:2px;
+  color:white;
+  border:1px solid white;
+  border-radius:35px;
+  padding:15px 45px;
+  text-decoration:none;
+  margin-top:100px;
+  transition:background-position 0.6s,color 0.6s,box-shadow 0.6s,margin-top 0.6s;
+}
+ 
+a.hareket.yukari{
+  background-image: linear-gradient(to bottom,transparent 50%, #536DFE 50%);
+  color:#536DFE;
+  border:1px solid #536DFE;
+}
+</style>
+
+<style>
+/* Three columns side by side */
+.cools {
+  margin: auto;
+  width: 26%;
+  margin-bottom: 12px;
+  padding: 0 8px;
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 650px) {
+  .cools {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Add some shadows to create a card effect */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+.yetkili-s {
+  padding: 0 16px;
+}
+
+/* Clear floats */
+.yetkili-s::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.iletisim {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.iletisim:hover {
+  background-color: #555;
+  text-decoration:none;
+}
+h2 {
+font-size:36px;
+  }
+a:hover {
+color:white;
+text-decoration:none;
+  }
+.yetkilir img:hover {
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+          transition:         transform .8s ease-in-out;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  }
+
+</style>
